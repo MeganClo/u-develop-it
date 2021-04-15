@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
     });
 });
 
+db.query(`SELECT * FROM candidates`, (err, rows) => {
+  console.log(rows);
+});
+
 // default response for any other request (not found) **MUST GO AT BOTTOM OF OTHER ROUTES**
 app.use((req, res) => {
     res.status(404).end();
